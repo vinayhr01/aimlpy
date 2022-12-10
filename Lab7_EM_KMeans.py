@@ -4,7 +4,7 @@
  # the program. 
  
 import matplotlib.pyplot as plt 
-from sklearn import datasets 
+from sklearn.datasets import load_iris
 from sklearn.cluster import KMeans 
 import sklearn.metrics as sm 
 import pandas as pd 
@@ -28,23 +28,23 @@ def rename(s):
  
  
  # import some data to play with 
-iris = datasets.load_iris() 
+iris = load_iris() 
  
-print("\n IRIS DATA :", iris.data) 
-print("\n IRIS FEATURES :\n", iris.feature_names) 
-print("\n IRIS TARGET  :\n", iris.target) 
-print("\n IRIS TARGET NAMES:\n", iris.target_names) 
+print("\n IRIS DATA :", iris["data"]) 
+print("\n IRIS FEATURES :\n", iris["feature_names"]) 
+print("\n IRIS TARGET  :\n", iris["target"]) 
+print("\n IRIS TARGET NAMES:\n", iris["target_names"]) 
  
  
  # Store the inputs as a Pandas Dataframe and set the column names 
-X = pd.DataFrame(iris.data) 
+X = pd.DataFrame(iris["data"])
  
  # print(X) 
 X.columns = ["Sepal_Length", "Sepal_Width", "Petal_Length", "Petal_Width"] 
  
  # print(X.columns) #print("X:",x) 
  # print("Y:",y) 
-y = pd.DataFrame(iris.target) 
+y = pd.DataFrame(iris["target"]) 
 y.columns = ["Targets"] 
  
  # Set the size of the plot 
@@ -63,7 +63,7 @@ plt.scatter(X.Petal_Length, X.Petal_Width, c=colormap[y.Targets], s=40)
 plt.title("Petal") 
 plt.show() 
  
-print("Actual Target is:\n", iris.target) 
+print("Actual Target is:\n", iris["target"])
  
  # K Means Cluster 
 model = KMeans(n_clusters=3) 
