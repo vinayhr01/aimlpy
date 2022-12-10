@@ -13,7 +13,7 @@ def derivatives_sigmoid(x):
      return x * (1 - x) 
  
  #Variable initialization 
-epoch=5000 	#Setting training iterations 
+epoch=5 	#Setting training iterations 
 lr=0.1 		#Setting learning rate 
 inputlayer_neurons = 2 		#number of features in data set 
 hiddenlayer_neurons = 3 	#number of hidden layers neurons 
@@ -48,9 +48,9 @@ for i in range(epoch):
      d_hiddenlayer = EH * hiddengrad 
  
  # dotproduct of nextlayererror and currentlayerop 
-wout += hlayer_act.T.dot(d_output) *lr 
-wh += X.T.dot(d_hiddenlayer) *lr 
- 
-print("Input: \n" + str(X))  
+     wout += hlayer_act.T.dot(d_output) *lr 
+     wh += X.T.dot(d_hiddenlayer) *lr 
+
+print("\n\nInput: \n" + str(X))  
 print("Actual Output: \n" + str(y)) 
 print("Predicted Output: \n" ,output)
