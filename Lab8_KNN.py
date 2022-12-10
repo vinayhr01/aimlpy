@@ -12,9 +12,9 @@ from sklearn.model_selection import train_test_split
 iris_dataset=load_iris() 
  
  #display the iris dataset 
-print("\n IRIS FEATURES \ TARGET NAMES: \n ", iris_dataset.target_names) 
-for i in range(len(iris_dataset.target_names)): 
-     print("\n[{0}]:[{1}]".format(i,iris_dataset.target_names[i])) 
+print("\n IRIS FEATURES \ TARGET NAMES: \n ", iris_dataset["target_names"]) 
+for i in range(len(iris_dataset["target_names"])): 
+     print("\n[{0}]:[{1}]".format(i,iris_dataset["target_names"][i])) 
  
 print("\n IRIS DATA :\n",iris_dataset["data"]) 
  
