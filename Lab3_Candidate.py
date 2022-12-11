@@ -4,13 +4,7 @@ f = open('ts.csv')
 csv_file = csv.reader(f)
 data = list(csv_file)
 
-for i in data:
-    if i[-1] == "n":
-        specific = ['o'] * len(data[0][:-1])
-    else:
-        k = data.index(i)
-        specific = data[k][:-1]
-        break
+specific = data[1][:-1]
 
 general = [['?' for i in range(len(specific))] for j in range(len(specific))]
 
