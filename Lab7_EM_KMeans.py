@@ -77,7 +77,7 @@ colormap = np.array(["red", "lime", "black"])
  
  # Plot the Original Classifications 
 plt.subplot(1, 2, 1) 
-plt.scatter(X.Petal_Length, X.Petal_Width, c=colormap[y.Targets], s=40) 
+plt.scatter(X.Petal_Length, X.Petal_Width, c=colormap[y["Targets"]], s=40) 
 plt.title("Real Classification") 
  
  # Plot the Models Classifications 
