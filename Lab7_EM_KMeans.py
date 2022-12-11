@@ -55,11 +55,11 @@ colormap = np.array(["red", "lime", "black"])
  
  # Plot Sepal 
 plt.subplot(1, 2, 1) 
-plt.scatter(X.Sepal_Length, X.Sepal_Width, c=colormap[y.Targets], s=40) 
+plt.scatter(X.Sepal_Length, X.Sepal_Width, c=colormap[y["Targets"]], s=40) 
 plt.title("Sepal") 
  
 plt.subplot(1, 2, 2) 
-plt.scatter(X.Petal_Length, X.Petal_Width, c=colormap[y.Targets], s=40) 
+plt.scatter(X.Petal_Length, X.Petal_Width, c=colormap[y["Targets"]], s=40) 
 plt.title("Petal") 
 plt.show() 
  
