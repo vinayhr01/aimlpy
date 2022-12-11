@@ -10,9 +10,7 @@ import sklearn.metrics as sm
 import pandas as pd 
 import numpy as np 
  
- 
 l1 = [0, 1, 2] 
- 
  
 def rename(s): 
      l2 = [] 
@@ -34,7 +32,6 @@ print("\n IRIS DATA :", iris["data"])
 print("\n IRIS FEATURES :\n", iris["feature_names"]) 
 print("\n IRIS TARGET  :\n", iris["target"]) 
 print("\n IRIS TARGET NAMES:\n", iris["target_names"]) 
- 
  
  # Store the inputs as a Pandas Dataframe and set the column names 
 X = pd.DataFrame(iris["data"])
