@@ -122,20 +122,13 @@ def main():
      dataset = loadcsv(filename) 
  
      trainingset, testset = splitdataset(dataset, splitratio) 
-     print( 
-         "Split {0} rows into train={1} and test={2} rows".format( 
-             len(dataset), len(trainingset), len(testset) 
-         ) 
-     ) 
+     print("Split {0} rows into train={1} and test={2} rows".format(len(dataset), len(trainingset), len(testset))) 
      # prepare model 
      summaries = summarizebyclass(trainingset) 
      # print(summaries) 
      # test model 
-     predictions = getpredictions( 
-         summaries, testset 
-     )  # find the predictions of test data with the training data 
+     predictions = getpredictions(summaries, testset)  # find the predictions of test data with the training data 
      accuracy = getaccuracy(testset, predictions) 
      print("Accuracy of the classifier is : {0}%".format(accuracy)) 
- 
  
 main()
