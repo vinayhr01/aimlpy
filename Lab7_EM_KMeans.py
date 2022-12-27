@@ -106,6 +106,7 @@ gmm.fit(xs)
 
 y_cluster_gmm = gmm.predict(xs) 
  
+plt.figure(figsize=(14, 7))
  
 plt.subplot(1, 2, 1) 
 plt.scatter(X.Petal_Length, X.Petal_Width, c=colormap[y["Targets"]], s=40) 
