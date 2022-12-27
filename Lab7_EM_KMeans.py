@@ -6,6 +6,8 @@
 import matplotlib.pyplot as plt 
 from sklearn.datasets import load_iris
 from sklearn.cluster import KMeans 
+from sklearn.mixture import GaussianMixture 
+from sklearn import preprocessing
 import sklearn.metrics as sm 
 import pandas as pd 
 import numpy as np 
@@ -89,17 +91,13 @@ print("Accuracy of KMeans is ", sm.accuracy_score(y, km))
 print("Confusion Matrix for KMeans is \n", sm.confusion_matrix(y, km)) 
  
  # The GaussianMixture scikit-learn class can be used to model this problem 
- # and estimate the parameters of the distributions using the expectation-maximization algorithm. 
- 
-from sklearn import preprocessing 
+ # and estimate the parameters of the distributions using the expectation-maximization algorithm.  
  
 scaler = preprocessing.StandardScaler() 
 scaler.fit(X) 
 xsa = scaler.transform(X) 
 xs = pd.DataFrame(xsa, columns=X.columns) 
 print("\n", xs.sample(5)) 
-
-from sklearn.mixture import GaussianMixture 
  
 gmm = GaussianMixture(n_components=3) 
 gmm.fit(xs) 
