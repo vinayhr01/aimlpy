@@ -45,8 +45,7 @@ def predict(summaries, testSetInstance):
         probabilities[classValue] = 1
         for i in range(len(classSummaries)):
             mean, stdev = classSummaries[i]
-            x = testSetInstance[i]
-            probabilities[classValue] *= calculateProbability(x, mean, stdev)
+            probabilities[classValue] *= calculateProbability(testSetInstance[i], mean, stdev)
             bestLabel, bestProb = None, -1
             for classValue, probability in probabilities.items():
                 if bestLabel is None or probability > bestProb:
