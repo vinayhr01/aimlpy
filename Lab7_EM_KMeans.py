@@ -106,7 +106,12 @@ gmm.fit(xs)
 
 y_cluster_gmm = gmm.predict(xs) 
  
+ 
 plt.subplot(1, 2, 1) 
+plt.scatter(X.Petal_Length, X.Petal_Width, c=colormap[y["Targets"]], s=40) 
+plt.title("Real Classification") 
+
+plt.subplot(1, 2, 2) 
 plt.scatter(X.Petal_Length, X.Petal_Width, c=colormap[y_cluster_gmm], s=40) 
 plt.title("GMM Classification") 
 plt.show() 
