@@ -39,13 +39,13 @@ def calculateProbability(x, mean, stdev):
     exponent = math.exp((-(x-mean)**2)/(2*(stdev**2)))
     return (1 / math.sqrt(2*math.pi*(stdev**2))) * exponent
 
-def predict(summaries, inputVector):
+def predict(summaries, testSetInstance):
     probabilities = {}
     for classValue, classSummaries in summaries.items():
         probabilities[classValue] = 1
         for i in range(len(classSummaries)):
             mean, stdev = classSummaries[i]
-            x = inputVector[i]
+            x = testSetInstance[i]
             probabilities[classValue] *= calculateProbability(x, mean, stdev)
             bestLabel, bestProb = None, -1
             for classValue, probability in probabilities.items():
