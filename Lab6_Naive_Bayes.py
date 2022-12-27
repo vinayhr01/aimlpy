@@ -23,10 +23,10 @@ def stdev(numbers):
         v += (x-avg)**2
     return math.sqrt(v/(len(numbers)-1))
 
-def summarizeByClass(dataset):
+def summarizeByClass(trainingSet):
     separated = {}
-    for i in range(len(dataset)):
-        vector = dataset[i]
+    for i in range(len(trainingSet)):
+        vector = trainingSet[i]
         if (vector[-1] not in separated):
             separated[vector[-1]] = []
         separated[vector[-1]].append(vector)
