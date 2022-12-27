@@ -10,7 +10,6 @@ def loadcsv(filename):
 
 def splitDataset(dataset, splitRatio):
     trainSize = int(len(dataset) * splitRatio)
-    trainSet = []
     trainSet,testSet = dataset[:trainSize],dataset[trainSize:]
     return [trainSet, testSet]
 
