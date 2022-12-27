@@ -80,15 +80,10 @@ def calculateprobability(x, mean, stdev):
  
 def calculateclassprobabilities(summaries, inputvector): 
      probabilities = {}  # probabilities contains the all prob of all class of test data 
-     for ( 
-         classvalue, 
-         classsummaries, 
-     ) in summaries.items():  # class and attribute information as mean and sd 
+     for (classvalue, classsummaries) in summaries.items():  # class and attribute information as mean and sd 
          probabilities[classvalue] = 1 
          for i in range(len(classsummaries)): 
-             mean, stdev = classsummaries[ 
-                 i 
-             ]  # take mean and sd of every attribute for class 0 and 1 seperaely 
+             mean, stdev = classsummaries[i]  # take mean and sd of every attribute for class 0 and 1 seperaely 
              x = inputvector[i]  # testvector's first attribute 
              probabilities[classvalue] *= calculateprobability(x, mean, stdev) 
              # use normal dist 
@@ -98,10 +93,7 @@ def calculateclassprobabilities(summaries, inputvector):
 def predict(summaries, inputvector):  # training and test data is passed 
      probabilities = calculateclassprobabilities(summaries, inputvector) 
      bestLabel, bestProb = None, -1 
-     for ( 
-         classvalue, 
-         probability, 
-     ) in probabilities.items():  # assigns that class which has he highest prob 
+     for (classvalue, probability) in probabilities.items():  # assigns that class which has he highest prob 
          if bestLabel is None or probability > bestProb: 
              bestProb = probability 
              bestLabel = classvalue 
