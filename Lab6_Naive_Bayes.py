@@ -74,8 +74,7 @@ dataset = loadcsv(filename)
 actual = []
 trainingSet, testSet = splitDataset(dataset, splitRatio)
 for i in range(len(testSet)):
-	vector = testSet[i]
-	actual.append(vector[-1])
+	actual.append(testSet[i][-1])
 print('Split {0} rows into train={1} and test={2} rows'.format(len(dataset), len(trainingSet), len(testSet)))
 summaries = summarizeByClass(trainingSet) #will have (mean,sd) for all attributes.(for class 1 & 0 separately)
 predictions = getPredictions(summaries, testSet)
