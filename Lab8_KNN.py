@@ -44,8 +44,6 @@ x_new = np.array([x])
 print("\n XNEW \n",x_new) 
  
 for i in range(len(X_test)): 
-   x = X_test[i] 
-   x_new = np.array([x]) 
-   prediction = kn.predict(x_new) 
+   prediction = kn.predict(np.array([X_test[i]])) 
    print("\n Actual : {0} {1}, Predicted :{2}{3}".format(y_test[i],iris_dataset["target_names"][y_test[i]],prediction,iris_dataset["target_names"][ prediction])) 
 print("\n TEST SCORE[ACCURACY]: {:.2f}\n".format(kn.score(X_test, y_test))) 
