@@ -21,6 +21,7 @@ Y = np.log(np.abs(X ** 2 - 1) + .5)
  
  
 draw(10) 
+draw(1) 
 draw(0.1) 
 draw(0.01) 
-draw(0.001) 
+draw(0.001)
