@@ -66,8 +66,8 @@ def getAccuracy(testSet, predictions):
             correct += 1
     return (correct/(len(testSet))) * 100.0
 
-filename = 'tsvnaive.csv'
-splitRatio = 0.9
+filename = 'diabetes2.csv'
+splitRatio = 0.7
 dataset = loadcsv(filename)
 actual = []
 trainingSet, testSet = splitDataset(dataset, splitRatio)
@@ -76,7 +76,7 @@ for i in range(len(testSet)):
 print('Split {0} rows into train={1} and test={2} rows'.format(len(dataset), len(trainingSet), len(testSet)))
 summaries = summarizeByClass(trainingSet) #will have (mean,sd) for all attributes.(for class 1 & 0 separately)
 predictions = getPredictions(summaries, testSet)
-print('\nActual values:\n',actual)
-print("\nPredictions:\n",predictions)
+#print('\nActual values:\n',actual)
+#print("\nPredictions:\n",predictions)
 accuracy = getAccuracy(testSet, predictions)
 print("Accuracy",accuracy)
