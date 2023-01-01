@@ -13,7 +13,6 @@ X_test = [[int(j) for j in i[:-1]] for i in dataset[trainSize:]]
 y_train = [int(i[-1]) for i in dataset[:trainSize]]
 y_test = [int(i[-1]) for i in dataset[trainSize:]]
 
-
 model = GaussianNB()
 model.fit(X_train, y_train)
 print("Accuracy ", model.score(X_test,y_test)*100)
