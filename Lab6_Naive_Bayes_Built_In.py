@@ -1,4 +1,4 @@
-from sklearn.naive_bayes import GaussianNB
+'''from sklearn.naive_bayes import GaussianNB
 import csv
 import numpy as np
 
@@ -33,7 +33,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import train_test_split
 import sklearn.metrics as sm
 
-data=pd.read_csv('traintennis.csv')
+data=pd.read_csv('tsn.csv')
 print("first five records\n",data.head())
 
 x=data.iloc[:,:-1]
@@ -48,13 +48,13 @@ le_outlook = LabelEncoder()
 x.Outlook = le_outlook.fit_transform(x.Outlook)
 
 le_Temperature=LabelEncoder()
-x.Temperature=le_Outlook.fit_transform(x.Temperature)
+x.Temperature=le_Temperature.fit_transform(x.Temperature)
 
 le_Humidity=LabelEncoder()
-x.Humidity=le_Outlook.fit_transform(x.Humidity)
+x.Humidity=le_Humidity.fit_transform(x.Humidity)
 
 le_Wind=LabelEncoder()
-x.Wind=le_Outlook.fit_transform(x.Wind)
+x.Wind=le_Wind.fit_transform(x.Wind)
 
 print("after encoding train data\n",x.head())
 
@@ -65,9 +65,9 @@ y=le_PlayTennis.fit_transform(y)
 
 print("after encoding test data\n",y)
 
-x_train, x_test, y_train, y_test=train_test_split(x,y,test_size=0.2)
+x_train, x_test, y_train, y_test=train_test_split(x,y,test_size=0.2,random_state=0)
 
 classifier=GaussianNB()
 classifier.fit(x_train,y_train)
 
-print("Accuracy is:", sm.accuracy_score(classifier.predict(X_test), y_test))'''
+print("Accuracy is:", sm.accuracy_score(classifier.predict(x_test), y_test)*100)
