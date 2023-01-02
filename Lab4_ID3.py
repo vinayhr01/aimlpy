@@ -99,11 +99,11 @@ def classify(node,x_test,features):
              classify(n,x_test,features) 
  
  
-dataset,features=load_csv("ts.csv") 
+dataset,features=load_csv("tsn.csv") 
 node1=build_tree(dataset,features) 
 print("The decision tree for the dataset using ID3 algorithm is") 
 print_tree(node1,0) 
-testdata,features=load_csv("ts.csv") 
+testdata,features=load_csv("tsn.csv") 
 for xtest in testdata: 
      print("The test instance:",xtest) 
      print("The label for test instance:",end=" ") 
