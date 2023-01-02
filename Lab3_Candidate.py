@@ -1,8 +1,6 @@
 import csv
 
-f = open('ts.csv')
-csv_file = csv.reader(f)
-data = list(csv_file)
+data = list(csv.reader(open("ts.csv")))
 
 for i in data:
     if i[-1] == "n":
