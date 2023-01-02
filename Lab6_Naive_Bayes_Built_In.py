@@ -30,7 +30,6 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import train_test_split
-import sklearn.metrics as sm
 
 data=pd.read_csv('tsn.csv')
 print("first five records\n",data.head())
