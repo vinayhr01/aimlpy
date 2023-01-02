@@ -27,7 +27,6 @@ print("Accuracy ", (cnt/len(X_test))*100)
 print("Accuracy ", model.score(X_test,y_test)*100)
 '''
 import pandas as pd
-from sklearn import tree
 from sklearn.preprocessing import LabelEncoder
 from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import train_test_split
