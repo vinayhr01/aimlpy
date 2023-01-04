@@ -42,24 +42,20 @@ print("first five train output\n",y.head())
 
 x=x.copy()
 
-le_outlook = LabelEncoder()
-x.Outlook = le_outlook.fit_transform(x.Outlook)
+le = LabelEncoder()
+x.Outlook = le.fit_transform(x.Outlook)
 
-le_Temperature=LabelEncoder()
-x.Temperature=le_Temperature.fit_transform(x.Temperature)
+x.Temperature=le.fit_transform(x.Temperature)
 
-le_Humidity=LabelEncoder()
-x.Humidity=le_Humidity.fit_transform(x.Humidity)
+x.Humidity=le.fit_transform(x.Humidity)
 
-le_Wind=LabelEncoder()
-x.Wind=le_Wind.fit_transform(x.Wind)
+x.Wind=le.fit_transform(x.Wind)
 
 print("after encoding train data\n",x.head())
 
 y=y.copy()
 
-le_PlayTennis=LabelEncoder()
-y=le_PlayTennis.fit_transform(y)
+y=le.fit_transform(y)
 
 print("after encoding test data\n",y)
 
