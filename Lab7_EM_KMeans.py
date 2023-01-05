@@ -93,16 +93,10 @@ print("Confusion Matrix for KMeans is \n", sm.confusion_matrix(y, km))
  # The GaussianMixture scikit-learn class can be used to model this problem 
  # and estimate the parameters of the distributions using the expectation-maximization algorithm.  
  
-scaler = preprocessing.StandardScaler() 
-scaler.fit(X) 
-xsa = scaler.transform(X) 
-xs = pd.DataFrame(xsa, columns=X.columns) 
-print("\n", xs.sample(5)) 
- 
 gmm = GaussianMixture(n_components=3) 
-gmm.fit(xs) 
+gmm.fit(X) 
 
-y_cluster_gmm = gmm.predict(xs) 
+y_cluster_gmm = gmm.predict(X) 
  
 plt.figure(figsize=(14, 7))
  
