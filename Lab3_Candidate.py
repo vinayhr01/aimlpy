@@ -1,6 +1,6 @@
 import csv
 
-data = list(csv.reader(open("ts.csv")))
+data = list(csv.reader(open("te.csv")))
 
 for i in data:
     if i[-1] == "n":
