@@ -4,13 +4,10 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import train_test_split
 
 data=pd.read_csv('tsn.csv')
-print("first five records\n",data.head())
 
 x=data.iloc[:,:-1]
-print("first five train data\n",x.head())
 
 y=data.iloc[:,-1]
-print("first five train output\n",y.head())
 
 x=x.copy()
 
@@ -23,13 +20,9 @@ x.Humidity=le.fit_transform(x.Humidity)
 
 x.Wind=le.fit_transform(x.Wind)
 
-print("after encoding train data\n",x.head())
-
 y=y.copy()
 
 y=le.fit_transform(y)
-
-print("after encoding test data\n",y)
 
 x_train, x_test, y_train, y_test=train_test_split(x,y)
 
