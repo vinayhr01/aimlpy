@@ -2,7 +2,6 @@ from sklearn.tree import DecisionTreeClassifier, export_text
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 import pandas as pd
-import matplotlib.pyplot as plt
 
 data = pd.read_csv("tsn.csv")
 
