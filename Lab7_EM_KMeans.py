@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import load_iris
 from sklearn.cluster import KMeans 
 from sklearn.mixture import GaussianMixture 
-from sklearn import preprocessing
 import sklearn.metrics as sm 
 import pandas as pd 
 import numpy as np 
