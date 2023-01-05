@@ -1,4 +1,4 @@
-from sklearn.tree import DecisionTreeClassifier, plot_tree, export_text
+from sklearn.tree import DecisionTreeClassifier, export_text
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 import pandas as pd
@@ -29,9 +29,6 @@ x_train, x_test, y_train, y_test=train_test_split(x,y,random_state=0)
 
 dtree = DecisionTreeClassifier(criterion='entropy')
 dtree.fit(x_train, y_train)
-f_tree = export_text(dtree,feature_names=['Outlook','Temperature','Humidity','Wind'],spacing=10)
+f_tree = export_text(dtree,feature_names=['Outlook','Temperature','Humidity','Wind'])
 print(f_tree)
 print("Accuracy is", dtree.score(x_test, y_test)*100)
-#plt.figure(figsize=(14,7))
-plot_tree(dtree,feature_names=['Outlook','Temperature','Humidity','Wind'],class_names=['Yes','No'],impurity=False,rounded=True,filled=True)
-plt.show()
