@@ -31,7 +31,7 @@ y=le.fit_transform(y)
 
 print("after encoding test data\n",y)
 
-x_train, x_test, y_train, y_test=train_test_split(x,y,test_size=0.7,random_state=0)
+x_train, x_test, y_train, y_test=train_test_split(x,y)
 
 classifier=GaussianNB()
 classifier.fit(x_train,y_train)
